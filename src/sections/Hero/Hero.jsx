@@ -54,7 +54,7 @@ function Hero() {
           }}
         >
           <span className="hero-line" />
-          <span>Full Stack Developer</span>
+          <span>DESENVOLVEDORA FULL STACK JÚNIOR</span>
         </motion.div>
 
         <div className="hero-name">
@@ -96,12 +96,12 @@ function Hero() {
           }}
         >
           <p className="hero-description">
-            Building complete applications with{" "}
-            <span>interactive experiences.</span>
+            Desenvolvimento de aplicações completas com{" "}
+            <span>experiências interativas.</span>
           </p>
 
           <a href="#projects" className="hero-cta">
-            <span>Explore my work</span>
+            <span>Explore meu trabalho</span>
             <span className="hero-cta-arrow">↗</span>
           </a>
         </motion.div>

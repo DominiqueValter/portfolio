@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import "./Navbar.css";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Sobre", href: "#about" },
+  { label: "Projetos", href: "#projects" },
+  { label: "Experiência", href: "#experience" },
+  { label: "Contato", href: "#contact" },
 ];
 
 function Navbar() {
@@ -30,7 +30,7 @@ function Navbar() {
 
       <div className="navbar-status">
         <span className="status-dot" />
-        <span>Available</span>
+        <span>Disponível</span>
       </div>
     </motion.header>
   );

@@ -27,8 +27,8 @@ function Contact() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span>Let’s engineer</span>
-            <span className="contact-heading-outline">something real.</span>
+            <span>Vamos projetar</span>
+            <span className="contact-heading-outline">Algo real.</span>
           </motion.h2>
 
           <motion.div

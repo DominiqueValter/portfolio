@@ -48,11 +48,7 @@ function About() {
             duration: 0.9,
             ease: [0.16, 1, 0.3, 1],
           }}
-        >
-          <span>I build</span>
-
-          <span className="about-heading-outline">digital experiences.</span>
-        </motion.div>
+        ></motion.div>
 
         <div className="about-content">
           <motion.div
@@ -118,8 +114,8 @@ function About() {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <span>Based in Curitiba, Brazil</span>
-          <span>Available for new opportunities</span>
+          <span>Sediada em Curitiba, Brasil.</span>
+          <span>Disponível para novas oportunidades</span>
         </motion.div>
       </div>
     </section>
