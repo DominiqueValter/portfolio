@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { contactData } from "../../data/experience";
+import { contactData } from "../../Data/experience";
 import "./Contact.css";
 
 function Contact() {

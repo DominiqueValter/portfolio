@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { educationData } from "../../data/experience";
+import { educationData } from "../../Data/experience";
 import "./Education.css";
 
 function Education() {
