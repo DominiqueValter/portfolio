@@ -1,0 +1,70 @@
+{
+  "hero": {
+    "eyebrow": "Full Stack Developer",
+    "descriptionPre": "Building complete applications with ",
+    "descriptionSpan": "interactive experiences.",
+    "cta": "Explore my work",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "label": "About",
+    "headingLine1": "I build",
+    "headingLine2": "digital experiences.",
+    "p1": "I'm <1>Dominique Mariah Valter</1>, a Full Stack developer passionate about technology, problem-solving, and digital experiences.",
+    "p2": "My work combines building complete applications with a particular interest in creating interfaces that aren't just good-looking, but also <1>interactive and memorable.</1>",
+    "p3": "I currently work with technologies like <1>React, C#, ASP.NET Core, and PostgreSQL</1>, building solutions that span front-end, back-end, database, and deployment.",
+    "highlights": [
+      {
+        "title": "Full Stack",
+        "description": "Building complete applications, from front-end to API, database, and deployment."
+      },
+      {
+        "title": "Interactive",
+        "description": "Interfaces designed to be explored, combining animation, interaction, and visual experience."
+      },
+      {
+        "title": "Problem Solving",
+        "description": "Turning real problems into functional, organized, and scalable solutions."
+      }
+    ],
+    "location": "Based in Curitiba, Brazil",
+    "availability": "Available for new opportunities"
+  },
+  "projects": {
+    "sectionLabel": "Featured Projects",
+    "viewApp": "View Application ↗",
+    "viewCode": "Code & Docs",
+    "items": {
+      "01": {
+        "role": "FULL STACK DEVELOPMENT",
+        "period": "APRIL 2026 – PRESENT",
+        "titleSolid": "FLEET",
+        "titleOutline": "MANAGEMENT",
+        "description": "Complete enterprise vehicle management solution covering fleet lifecycle, driver conflict prevention, and preventive scheduling.",
+        "highlightsTitle": "ARCHITECTURE-FOCUSED ENGINEERING",
+        "highlights": [
+          "Layered architecture (Domain, Application, Infrastructure, API)",
+          "Full containerization with Docker Compose & Railway deployment",
+          "Automatic EF Core migrations, Nginx SPA proxy, and secure environment configuration"
+        ],
+        "badge": "API + DATABASE + SPA",
+        "caption": "Production-ready: multi-container orchestration (Railway and Docker)"
+      },
+      "02": {
+        "role": "FRONT-END & INTERACTION DESIGN",
+        "period": "COMPLETED",
+        "titleSolid": "ATAKAMA",
+        "titleOutline": "WEB",
+        "description": "High-conversion digital portfolio and institutional site for an environmental compliance consultancy, focused on authority and lead generation.",
+        "highlightsTitle": "VISUAL EXPERIENCE & PERFORMANCE",
+        "highlights": [
+          "Full structuring of the company's presentation flow and contact points",
+          "Fluid, dynamic scroll animations inspired by Apple's design patterns",
+          "Modern interface with strong aesthetic rigor, usability, and flawless responsiveness"
+        ],
+        "badge": "UI/UX & MOTION DESIGN",
+        "caption": "Premium visual experience: fluid interactions and environmental authority communication"
+      }
+    }
+  }
+}

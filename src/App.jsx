@@ -1,5 +1,8 @@
 import Navbar from "./components/Navbar/Navbar";
+
 import Hero from "./sections/Hero/Hero";
+import About from "./sections/About/About";
+import Projects from "./sections/Projects/Projects";
 
 function App() {
   return (
@@ -9,7 +12,13 @@ function App() {
       <main>
         <Hero />
 
-        {/* Próximas seções serão adicionadas aqui */}
+        <About />
+
+        <Projects />
+
+        {/* Experience */}
+        {/* Education */}
+        {/* Contact */}
       </main>
     </>
   );

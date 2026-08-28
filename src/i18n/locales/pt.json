@@ -1,0 +1,70 @@
+{
+  "hero": {
+    "eyebrow": "Full Stack Developer",
+    "descriptionPre": "Construindo aplicações completas com ",
+    "descriptionSpan": "experiências interativas.",
+    "cta": "Explore meu trabalho",
+    "scroll": "Role para explorar"
+  },
+  "about": {
+    "label": "Sobre",
+    "headingLine1": "Eu construo",
+    "headingLine2": "experiências digitais.",
+    "p1": "Sou <1>Dominique Mariah Valter</1>, desenvolvedora Full Stack apaixonada por tecnologia, resolução de problemas e experiências digitais.",
+    "p2": "Minha atuação combina desenvolvimento de aplicações completas com um interesse especial em criar interfaces que não sejam apenas bonitas, mas também <1>interativas e memoráveis.</1>",
+    "p3": "Atualmente trabalho com tecnologias como <1>React, C#, ASP.NET Core e PostgreSQL</1>, desenvolvendo soluções que vão do front-end ao back-end, banco de dados e deploy.",
+    "highlights": [
+      {
+        "title": "Full Stack",
+        "description": "Desenvolvimento de aplicações completas, do front-end à API, banco de dados e deploy."
+      },
+      {
+        "title": "Interativo",
+        "description": "Interfaces pensadas para serem exploradas, combinando animação, interação e experiência visual."
+      },
+      {
+        "title": "Resolução de Problemas",
+        "description": "Transformação de problemas reais em soluções funcionais, organizadas e escaláveis."
+      }
+    ],
+    "location": "Baseada em Curitiba, Brasil",
+    "availability": "Disponível para novas oportunidades"
+  },
+  "projects": {
+    "sectionLabel": "Projetos em Destaque",
+    "viewApp": "Ver Aplicação ↗",
+    "viewCode": "Código e Documentos",
+    "items": {
+      "01": {
+        "role": "DESENVOLVIMENTO FULL STACK",
+        "period": "ABRIL DE 2026 – PRESENTE",
+        "titleSolid": "GESTÃO DE FROTA",
+        "titleOutline": "SISTEMA",
+        "description": "Solução completa de gestão veicular empresarial cobrindo ciclo de vida de frotas, prevenção de conflitos de condutores e agendamento preventivo.",
+        "highlightsTitle": "ENGENHARIA COM FOCO EM ARQUITETURA",
+        "highlights": [
+          "Arquitetura em camadas (Domínio, Aplicação, Infra, API)",
+          "Containerização completa com Docker Compose & Deploy Railway",
+          "Migrações automáticas EF Core, proxy Nginx para SPA e segurança de ambiente"
+        ],
+        "badge": "API + BANCO DE DADOS + SPA",
+        "caption": "Pronto para produção: orquestração de múltiplos contêineres (Railway e Docker)"
+      },
+      "02": {
+        "role": "FRONT-END & INTERACTION DESIGN",
+        "period": "CONCLUÍDO",
+        "titleSolid": "ATAKAMA",
+        "titleOutline": "WEB",
+        "description": "Portfólio digital e canal institucional de alta conversão para consultoria em regularização ambiental (SINIR, efluentes e coletas), focado em autoridade e captação de clientes.",
+        "highlightsTitle": "EXPERIÊNCIA VISUAL & PERFORMANCE",
+        "highlights": [
+          "Estruturação completa do fluxo de apresentação e pontos de contato da empresa",
+          "Animações fluidas e dinâmicas na rolagem inspiradas nos padrões da Apple",
+          "Interface moderna com alto rigor estético, usabilidade e responsividade impecável"
+        ],
+        "badge": "UI/UX & MOTION DESIGN",
+        "caption": "Experiência visual premium: interações fluidas e comunicação de autoridade ambiental"
+      }
+    }
+  }
+}
