@@ -13,9 +13,9 @@
 
   padding: 0 var(--page-padding);
 
-  background: rgba(11, 11, 15, 0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(11, 11, 15, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
@@ -24,6 +24,9 @@
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.05em;
+  color: var(--color-text);
+  text-decoration: none;
+  z-index: 101;
 }
 
 .navbar-logo span {
@@ -38,31 +41,23 @@
 
 .navbar-links a {
   position: relative;
-
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-
   color: var(--color-text-secondary);
-
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .navbar-links a::after {
   content: "";
-
   position: absolute;
   left: 0;
   bottom: -7px;
-
   width: 0;
   height: 1px;
-
   background: var(--color-primary);
-
   transition: width 0.3s var(--ease-out);
 }
 
@@ -74,28 +69,73 @@
   width: 100%;
 }
 
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 101;
+}
+
 .navbar-status {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-
   color: var(--color-text-muted);
 }
 
 .status-dot {
   width: 6px;
   height: 6px;
-
   border-radius: 50%;
   background: var(--color-secondary);
-
   box-shadow: 0 0 10px rgba(78, 201, 176, 0.6);
 }
 
+/* Botão Hamburguer (invisível no Desktop) */
+.menu-toggle-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu-toggle-btn .bar {
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition:
+    transform 0.3s var(--ease-out),
+    opacity 0.3s ease;
+}
+
+.menu-toggle-btn.open .line-top {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.menu-toggle-btn.open .line-bottom {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Mobile Drawer Overlay */
+.mobile-menu-overlay {
+  display: none;
+}
+
+/* =========================================
+   RESPONSIVIDADE MOBILE (< 768px)
+========================================= */
 @media (max-width: 768px) {
   .navbar {
     height: 70px;
@@ -105,7 +145,90 @@
     display: none;
   }
 
+  .menu-toggle-btn {
+    display: flex;
+  }
+
   .navbar-status {
-    font-size: 0.65rem;
+    display: none; /* oculta o texto de status para não poluir a barra superior */
+  }
+
+  .mobile-menu-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    background: rgba(11, 11, 15, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 6rem 2rem 2.5rem 2rem;
+    z-index: 100;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .mobile-nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(245, 245, 247, 0.08);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .mobile-link-number {
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .mobile-link-label {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    flex-grow: 1;
+    margin-left: 1rem;
+  }
+
+  .mobile-link-arrow {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+  }
+
+  .mobile-menu-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .mobile-cv-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .mobile-menu-footer span {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
   }
 }

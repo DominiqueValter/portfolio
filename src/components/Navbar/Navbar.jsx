@@ -1,38 +1,103 @@
-import { motion } from "motion/react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import "./Navbar.css";
 
 const navItems = [
   { label: "Sobre", href: "#about" },
   { label: "Projetos", href: "#projects" },
-  { label: "Experiência", href: "#experience" },
+  { label: "Carreira", href: "#experience" },
+  { label: "Formação", href: "#education" },
   { label: "Contato", href: "#contact" },
 ];
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Trava a rolagem da página quando o menu mobile está aberto
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
+
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <motion.header
-      className="navbar"
-      initial={{ y: -30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-    >
-      <a href="#" className="navbar-logo" aria-label="Página inicial">
+    <header className="navbar">
+      <a href="#home" className="navbar-logo" onClick={closeMenu}>
         DV<span>.</span>
       </a>
 
-      <nav className="navbar-links" aria-label="Navegação principal">
+      {/* Links Desktop */}
+      <nav className="navbar-links">
         {navItems.map((item) => (
-          <a key={item.label} href={item.href}>
+          <a key={item.href} href={item.href}>
             {item.label}
           </a>
         ))}
       </nav>
 
-      <div className="navbar-status">
-        <span className="status-dot" />
-        <span>Disponível</span>
+      <div className="navbar-right">
+        <div className="navbar-status">
+          <span className="status-dot" />
+          <span>Disponível</span>
+        </div>
+
+        {/* Botão Hamburguer Mobile */}
+        <button
+          className={`menu-toggle-btn ${isOpen ? "open" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Abrir Menu"
+        >
+          <span className="bar line-top" />
+          <span className="bar line-bottom" />
+        </button>
       </div>
-    </motion.header>
+
+      {/* Menu Overlay Mobile */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="mobile-menu-overlay"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <nav className="mobile-nav-links">
+              {navItems.map((item, idx) => (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMenu}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 * idx, duration: 0.3 }}
+                >
+                  <span className="mobile-link-number">0{idx + 1}</span>
+                  <span className="mobile-link-label">{item.label}</span>
+                  <span className="mobile-link-arrow">↗</span>
+                </motion.a>
+              ))}
+            </nav>
+
+            <div className="mobile-menu-footer">
+              <a
+                href="/Curriculo-Dominique-Valter.pdf"
+                download="Curriculo-Dominique-Valter.pdf"
+                className="mobile-cv-btn"
+                onClick={closeMenu}
+              >
+                Baixar CV (PDF) ↓
+              </a>
+              <span>Curitiba, PR — Brasil</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 }
 

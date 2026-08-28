@@ -100,10 +100,21 @@ function Hero() {
             <span>experiências interativas.</span>
           </p>
 
-          <a href="#projects" className="hero-cta">
-            <span>Explore meu trabalho</span>
-            <span className="hero-cta-arrow">↗</span>
-          </a>
+          <div className="hero-actions-group">
+            <a href="#projects" className="hero-cta-primary">
+              <span>Explore meu trabalho</span>
+              <span className="hero-cta-arrow">↗</span>
+            </a>
+
+            <a
+              href="/Curriculo-Dominique-Valter.pdf"
+              download="Curriculo-Dominique-Valter.pdf"
+              className="hero-cta-cv"
+            >
+              <span>Baixar CV (PDF)</span>
+              <span className="cv-icon">↓</span>
+            </a>
+          </div>
         </motion.div>
       </div>
 
