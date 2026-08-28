@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { projectsData } from "../../data/Projects";
+import { projectsData } from "../../Data/Projects";
 import "./Projects.css";
 
 function ProjectMockup({ project }) {
