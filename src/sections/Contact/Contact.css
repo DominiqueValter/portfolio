@@ -1,0 +1,114 @@
+.contact-section {
+  position: relative;
+  width: 100%;
+  padding: 8rem 0 4rem 0;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
+.contact-hero {
+  margin: 4rem 0 8rem 0;
+}
+
+.contact-heading {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  margin: 0 0 3.5rem 0;
+}
+
+.contact-heading-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 245, 247, 0.35);
+  transition:
+    color 0.4s ease,
+    -webkit-text-stroke-color 0.4s ease;
+}
+
+.contact-heading-outline:hover {
+  color: rgba(168, 85, 247, 0.08);
+  -webkit-text-stroke-color: var(--color-primary);
+}
+
+.contact-big-email {
+  display: inline-block;
+  font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  color: var(--color-primary-light);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+  padding-bottom: 0.5rem;
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-big-email:hover {
+  color: #ffffff;
+  border-color: var(--color-primary);
+  transform: translateX(6px);
+}
+
+.contact-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(245, 245, 247, 0.08);
+}
+
+.contact-meta-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.contact-meta-info .dot {
+  color: var(--color-border);
+}
+
+.contact-social-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-social-links a {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-social-links a:hover {
+  color: var(--color-primary-light);
+}
+
+.copyright {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+  .contact-footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

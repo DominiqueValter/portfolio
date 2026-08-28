@@ -3,6 +3,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./sections/Hero/Hero";
 import About from "./sections/About/About";
 import Projects from "./sections/Projects/Projects";
+import Experience from "./sections/Experience/Experience";
+import Education from "./sections/Education/Education";
+import Contact from "./sections/Contact/Contact";
 
 function App() {
   return (
@@ -16,9 +19,11 @@ function App() {
 
         <Projects />
 
-        {/* Experience */}
-        {/* Education */}
-        {/* Contact */}
+        <Experience />
+
+        <Education />
+
+        <Contact />
       </main>
     </>
   );
