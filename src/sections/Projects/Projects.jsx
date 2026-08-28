@@ -3,58 +3,17 @@ import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { projectsData } from "../../data/Projects";
 import "./Projects.css";
 
-function ProjectMockup({ project, mouseX, mouseY }) {
-  const backgroundX = useSpring(useTransform(mouseX, [-0.5, 0.5], [-12, 12]), {
-    damping: 25,
-    stiffness: 100,
-  });
-
-  const backgroundY = useSpring(useTransform(mouseY, [-0.5, 0.5], [-12, 12]), {
-    damping: 25,
-    stiffness: 100,
-  });
-
-  const windowX = useSpring(useTransform(mouseX, [-0.5, 0.5], [-6, 6]), {
-    damping: 22,
-    stiffness: 110,
-  });
-
-  const windowY = useSpring(useTransform(mouseY, [-0.5, 0.5], [-6, 6]), {
-    damping: 22,
-    stiffness: 110,
-  });
-
-  const contentX = useSpring(useTransform(mouseX, [-0.5, 0.5], [-14, 14]), {
-    damping: 20,
-    stiffness: 120,
-  });
-
-  const contentY = useSpring(useTransform(mouseY, [-0.5, 0.5], [-10, 10]), {
-    damping: 20,
-    stiffness: 120,
-  });
-
+function ProjectMockup({ project }) {
   const isFleet = project.id === "01";
 
   return (
-    <motion.div
-      className="mockup-scene"
-      style={{
-        x: backgroundX,
-        y: backgroundY,
-      }}
-    >
+    <div className="mockup-scene">
+      {/* Elementos decorativos de fundo */}
       <div className="mockup-glow mockup-glow-one" />
       <div className="mockup-glow mockup-glow-two" />
 
-      <motion.div
-        className="window-mockup"
-        style={{
-          x: windowX,
-          y: windowY,
-          translateZ: 35,
-        }}
-      >
+      {/* Janela Mockup Fixa */}
+      <div className="window-mockup">
         <div className="window-topbar">
           <div className="window-controls">
             <span className="window-dot dot-red" />
@@ -65,14 +24,11 @@ function ProjectMockup({ project, mouseX, mouseY }) {
           <span className="window-filename">{project.mockupFile}</span>
         </div>
 
-        <motion.div
+        {/* Conteúdo interno estático */}
+        <div
           className={`window-content ${
             isFleet ? "fleet-mockup" : "atakama-mockup"
           }`}
-          style={{
-            x: contentX,
-            y: contentY,
-          }}
         >
           {isFleet ? (
             <>
@@ -159,9 +115,9 @@ function ProjectMockup({ project, mouseX, mouseY }) {
               <div className="atakama-orb" />
             </>
           )}
-        </motion.div>
-      </motion.div>
-    </motion.div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -169,6 +125,7 @@ function ProjectCard({ project, index }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
+  // Animação 3D ativa apenas no card principal
   const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [6, -6]), {
     damping: 20,
     stiffness: 120,
@@ -287,7 +244,7 @@ function ProjectCard({ project, index }) {
             background: project.gradient,
           }}
         >
-          <ProjectMockup project={project} mouseX={mouseX} mouseY={mouseY} />
+          <ProjectMockup project={project} />
         </motion.div>
       </div>
     </motion.div>
