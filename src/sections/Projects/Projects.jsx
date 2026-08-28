@@ -1,13 +1,9 @@
 import React from "react";
-
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-
 import { projectsData } from "../../data/Projects";
-
 import "./Projects.css";
 
 function ProjectMockup({ project, mouseX, mouseY }) {
-  // Movimento das diferentes camadas do mockup
   const backgroundX = useSpring(useTransform(mouseX, [-0.5, 0.5], [-12, 12]), {
     damping: 25,
     stiffness: 100,
@@ -48,7 +44,6 @@ function ProjectMockup({ project, mouseX, mouseY }) {
         y: backgroundY,
       }}
     >
-      {/* Elementos decorativos do fundo */}
       <div className="mockup-glow mockup-glow-one" />
       <div className="mockup-glow mockup-glow-two" />
 
@@ -60,7 +55,6 @@ function ProjectMockup({ project, mouseX, mouseY }) {
           translateZ: 35,
         }}
       >
-        {/* Barra do navegador */}
         <div className="window-topbar">
           <div className="window-controls">
             <span className="window-dot dot-red" />
@@ -71,7 +65,6 @@ function ProjectMockup({ project, mouseX, mouseY }) {
           <span className="window-filename">{project.mockupFile}</span>
         </div>
 
-        {/* Conteúdo interno */}
         <motion.div
           className={`window-content ${
             isFleet ? "fleet-mockup" : "atakama-mockup"
@@ -85,9 +78,8 @@ function ProjectMockup({ project, mouseX, mouseY }) {
             <>
               <div className="dashboard-header">
                 <div>
-                  <span className="dashboard-eyebrow">FLEET MANAGEMENT</span>
-
-                  <strong>Dashboard</strong>
+                  <span className="dashboard-eyebrow">GESTÃO DE FROTAS</span>
+                  <strong>Painel Geral</strong>
                 </div>
 
                 <div className="dashboard-avatar">DV</div>
@@ -116,7 +108,6 @@ function ProjectMockup({ project, mouseX, mouseY }) {
               <div className="dashboard-panel">
                 <div className="panel-header">
                   <span>Status da frota</span>
-
                   <span className="panel-status">● Online</span>
                 </div>
 
@@ -178,7 +169,6 @@ function ProjectCard({ project, index }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Rotação geral do card
   const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [6, -6]), {
     damping: 20,
     stiffness: 120,
@@ -191,9 +181,7 @@ function ProjectCard({ project, index }) {
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-
     mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
-
     mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
   };
 
@@ -224,24 +212,16 @@ function ProjectCard({ project, index }) {
         ease: [0.16, 1, 0.3, 1],
       }}
     >
-      {/* =========================
-          CONTEÚDO
-      ========================== */}
-
       <div className="project-content-col">
         <div className="project-meta-header">
           <span className="meta-number">{project.id}</span>
-
           <span className="meta-role">{project.role}</span>
-
           <span className="meta-divider">•</span>
-
           <span className="meta-period">{project.period}</span>
         </div>
 
         <h2 className="project-big-title">
           <span className="title-solid">{project.titleSolid}</span>
-
           <span className="title-outline">{project.titleOutline}</span>
         </h2>
 
@@ -254,7 +234,6 @@ function ProjectCard({ project, index }) {
             {project.highlights.map((item, i) => (
               <li key={i}>
                 <span className="arch-arrow">▸</span>
-
                 {item}
               </li>
             ))}
@@ -293,10 +272,6 @@ function ProjectCard({ project, index }) {
           )}
         </div>
       </div>
-
-      {/* =========================
-          MOCKUP 3D
-      ========================== */}
 
       <div
         className="project-visual-col"
@@ -343,7 +318,7 @@ function Projects() {
         >
           <span>02</span>
           <span>/</span>
-          <span>Featured Projects</span>
+          <span>Projetos em Destaque</span>
         </motion.div>
 
         <div className="projects-list-wrapper">

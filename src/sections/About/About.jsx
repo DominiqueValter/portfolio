@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { useTranslation } from "react-i18next";
 import "./About.css";
 
 const highlights = [
@@ -11,13 +10,13 @@ const highlights = [
   },
   {
     number: "02",
-    title: "Interactive",
+    title: "Interatividade",
     description:
       "Interfaces pensadas para serem exploradas, combinando animação, interação e experiência visual.",
   },
   {
     number: "03",
-    title: "Problem Solving",
+    title: "Resolução de Problemas",
     description:
       "Transformação de problemas reais em soluções funcionais, organizadas e escaláveis.",
   },
@@ -36,7 +35,7 @@ function About() {
         >
           <span>01</span>
           <span>/</span>
-          <span>About</span>
+          <span>Sobre</span>
         </motion.div>
 
         <motion.div
@@ -48,7 +47,10 @@ function About() {
             duration: 0.9,
             ease: [0.16, 1, 0.3, 1],
           }}
-        ></motion.div>
+        >
+          <span>Eu crio</span>
+          <span className="about-heading-outline">experiências digitais.</span>
+        </motion.div>
 
         <div className="about-content">
           <motion.div
@@ -114,7 +116,7 @@ function About() {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <span>Sediada em Curitiba, Brasil.</span>
+          <span>Sediada em Curitiba, Brasil</span>
           <span>Disponível para novas oportunidades</span>
         </motion.div>
       </div>

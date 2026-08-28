@@ -16,7 +16,7 @@ function Education() {
         >
           <span>04</span>
           <span>/</span>
-          <span>Education & Foundation</span>
+          <span>Educação & Formação</span>
         </motion.div>
 
         <div className="education-grid">

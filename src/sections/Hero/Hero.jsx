@@ -113,7 +113,7 @@ function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
       >
-        <span>Scroll to explore</span>
+        <span>Role para explorar</span>
 
         <motion.span
           className="hero-scroll-line"

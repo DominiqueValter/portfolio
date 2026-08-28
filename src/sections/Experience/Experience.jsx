@@ -16,7 +16,7 @@ function Experience() {
         >
           <span>03</span>
           <span>/</span>
-          <span>Career & Impact</span>
+          <span>Carreira & Impacto</span>
         </motion.div>
 
         <motion.div
@@ -25,7 +25,10 @@ function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        ></motion.div>
+        >
+          <span>Sistemas escaláveis.</span>
+          <span className="experience-heading-outline">Impacto real.</span>
+        </motion.div>
 
         <div className="experience-list">
           {experienceData.map((exp, index) => (

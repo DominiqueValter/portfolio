@@ -16,7 +16,7 @@ function Contact() {
         >
           <span>05</span>
           <span>/</span>
-          <span>Get in Touch</span>
+          <span>Contato</span>
         </motion.div>
 
         <div className="contact-hero">

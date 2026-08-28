@@ -34,7 +34,7 @@ export const projectsData = [
   },
   {
     id: "02",
-    role: "FULL STACK · INTERACTIVE EXPERIENCE",
+    role: "FULL STACK · EXPERIÊNCIA INTERATIVA",
     period: "CONCLUÍDO",
     titleSolid: "ATAKAMA",
     titleOutline: "WEB",
