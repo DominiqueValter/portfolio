@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-  <h1>✨ Dominique Mariah Valter — Portfolio</h1>
+  <h1> Dominique Mariah Valter — Portfolio</h1>
   <p>
     <strong>Desenvolvedora Full Stack</strong> focada na construção de soluções corporativas escaláveis e interfaces interativas de alta fidelidade visual.
   </p>
