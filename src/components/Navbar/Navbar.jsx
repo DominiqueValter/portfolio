@@ -3,17 +3,41 @@ import { motion, AnimatePresence } from "motion/react";
 import "./Navbar.css";
 
 const navItems = [
-  { label: "Sobre", href: "#about" },
-  { label: "Projetos", href: "#projects" },
-  { label: "Carreira", href: "#experience" },
-  { label: "Formação", href: "#education" },
-  { label: "Contato", href: "#contact" },
+  { label: "Sobre", href: "#about", id: "about" },
+  { label: "Projetos", href: "#projects", id: "projects" },
+  { label: "Carreira", href: "#experience", id: "experience" },
+  { label: "Formação", href: "#education", id: "education" },
+  { label: "Contato", href: "#contact", id: "contact" },
 ];
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
-  // Trava a rolagem da página quando o menu mobile está aberto
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.id);
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-30% 0px -60% 0px", // Detecta quando a seção atinge a parte central superior da tela
+      },
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -33,7 +57,11 @@ function Navbar() {
       {/* Links Desktop */}
       <nav className="navbar-links">
         {navItems.map((item) => (
-          <a key={item.href} href={item.href}>
+          <a
+            key={item.href}
+            href={item.href}
+            className={activeSection === item.id ? "active" : ""}
+          >
             {item.label}
           </a>
         ))}
@@ -45,18 +73,17 @@ function Navbar() {
           <span>Disponível</span>
         </div>
 
-        {/* Botão Hamburguer Mobile */}
         <button
           className={`menu-toggle-btn ${isOpen ? "open" : ""}`}
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Abrir Menu"
+          aria-label="Alternar navegação"
         >
           <span className="bar line-top" />
           <span className="bar line-bottom" />
         </button>
       </div>
 
-      {/* Menu Overlay Mobile */}
+      {/* Drawer Mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -72,6 +99,7 @@ function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={closeMenu}
+                  className={activeSection === item.id ? "mobile-active" : ""}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * idx, duration: 0.3 }}
@@ -86,11 +114,12 @@ function Navbar() {
             <div className="mobile-menu-footer">
               <a
                 href="/Curriculo-Dominique-Valter.pdf"
-                download="Curriculo-Dominique-Valter.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mobile-cv-btn"
                 onClick={closeMenu}
               >
-                Baixar CV (PDF) ↓
+                Visualizar CV (PDF) ↗
               </a>
               <span>Curitiba, PR — Brasil</span>
             </div>

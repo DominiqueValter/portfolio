@@ -108,11 +108,12 @@ function Hero() {
 
             <a
               href="/Curriculo-Dominique-Valter.pdf"
-              download="Curriculo-Dominique-Valter.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hero-cta-cv"
             >
-              <span>Baixar CV (PDF)</span>
-              <span className="cv-icon">↓</span>
+              <span>Visualizar CV (PDF)</span>
+              <span className="cv-icon">↗</span>
             </a>
           </div>
         </motion.div>

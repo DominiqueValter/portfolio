@@ -232,3 +232,22 @@
     letter-spacing: 0.05em;
   }
 }
+
+/* Link Ativo Desktop */
+.navbar-links a.active {
+  color: var(--color-text);
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+/* Link Ativo Mobile Drawer */
+.mobile-nav-links a.mobile-active .mobile-link-label {
+  color: var(--color-primary);
+}
+
+.mobile-nav-links a.mobile-active .mobile-link-arrow {
+  color: var(--color-primary);
+  transform: translate(3px, -3px);
+}
