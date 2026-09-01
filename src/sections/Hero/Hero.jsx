@@ -137,12 +137,6 @@ function Hero() {
           }}
         />
       </motion.div>
-
-      <div className="hero-index">
-        <span>01</span>
-        <span>/</span>
-        <span>05</span>
-      </div>
     </section>
   );
 }

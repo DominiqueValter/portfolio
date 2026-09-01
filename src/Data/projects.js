@@ -1,10 +1,11 @@
 export const projectsData = [
   {
     id: "01",
+    category: "fullstack",
     role: "DESENVOLVIMENTO FULL STACK",
     period: "ABRIL DE 2026 – PRESENTE",
-    titleSolid: "GESTÃO DE FROTA",
-    titleOutline: "SISTEMA",
+    title: "GESTÃO DE FROTA",
+    categoryTag: "Sistema Corporativo Full Stack",
     description:
       "Solução completa de gestão veicular empresarial cobrindo ciclo de vida de frotas, prevenção de conflitos de condutores e agendamento preventivo.",
     highlightsTitle: "ENGENHARIA COM FOCO EM ARQUITETURA",
@@ -34,10 +35,11 @@ export const projectsData = [
   },
   {
     id: "02",
+    category: "frontend",
     role: "FULL STACK · EXPERIÊNCIA INTERATIVA",
     period: "CONCLUÍDO",
-    titleSolid: "ATAKAMA",
-    titleOutline: "WEB",
+    title: "ATAKAMA",
+    categoryTag: "Website Institucional e Conversão",
     description:
       "Portfólio digital e canal institucional de alta conversão para consultoria em regularização ambiental (SINIR, efluentes e coletas), focado em autoridade e captação de clientes.",
     highlightsTitle: "EXPERIÊNCIA VISUAL & PERFORMANCE",
